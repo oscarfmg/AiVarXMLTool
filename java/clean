@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+pushd ${0%/*} > /dev/null
+
+echo "Deleting *.class . . ."
+find . -name \*.class -delete
+
+popd > /dev/null

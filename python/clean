@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+pushd ${0%/*} > /dev/null
+
+echo "Deleting *.pyc . . ."
+find . -name \*.pyc -delete
+
+popd > /dev/null

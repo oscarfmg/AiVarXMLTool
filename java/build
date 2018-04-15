@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+pushd ${0%/*} > /dev/null
+
+echo "Deleting *.class . . ."
+find . -name \*.class -delete
+
+echo "Compiling . . ."
+javac Main.java
+jar cfe AiVariableTool.jar Main template.xml *.class ui/*.class converter/*.class
+
+if [ "$1" == "run" ]; then
+    echo "Running . . ."
+    java Main
+fi
+
+popd > /dev/null
